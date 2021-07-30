@@ -1,0 +1,13 @@
+{% extends "groups/group_base.html" %}
+{% load bootstrap5 %}
+
+{% block group_content %}
+<h4>Test Checkbox form...</h4>
+  <form method="POST" action="{% url 'groups:create' %}" id="groupForm">
+  	{% csrf_token %}
+  	{{ cb_form }}
+	  <div class="form-check form-switch">
+  		<input type="submit" value="Create" class="btn btn-primary btn-large">
+	  </div>
+  </form>
+{% endblock %}

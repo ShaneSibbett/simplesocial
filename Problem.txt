@@ -1,0 +1,22 @@
+Gie, 
+
+This project (attached) was one that I modified from my Udemy course. I would like to get to as much as we can on this one. 
+
+Problem 1)
+A)  The thing I want to learn with this project is how to create a combination listview and formview all on one HTML file. 
+I tried to create a conceptual HTML of what I want on the simplesocial\groups\templates\groups\group_list.html. 
+I tried to create the form and figure this out on my own and made the simplesocial\groups\templates\groups\group_listform.html.
+My attempt didn't work. 
+
+B) Capture the post results from the form into the database.  
+
+Problem 2)
+develop a search version of problem 1) . I will try to create a search ListView on my own. The part that seams hard is the FormView on the same HTML. 
+
+Problem 3)
+If we have time talk about the requirement for getting objects.select_related to work to get the parent and child to show up. 
+This project has it group_list.html but I know that I full get it. I was trying to do it again and got errors.
+
+Thank you
+
+Shane Sibbett
