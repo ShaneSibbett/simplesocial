@@ -38,7 +38,9 @@
 							<span class="badge bg-info text-dark">{{ group.posts.count }}</span> post{{ group.posts.count|pluralize }}
 						</div>
 						<div class="col-md-4 form-check form-switch">
-								<input class="form-check-input" type="checkbox" name='checks[]' value='{{ group.pk }}' {% if user in group.members.all %} checked >Your in {% else %}>Join {% endif %}{{ group.name }} # {{ group.pk }}
+								<input class="form-check-input" type="checkbox" 
+									{% if user in group.members.all %} name='leave[]' value='{{ group.pk }}' checked >Your in 
+									{% else %} name='join[]' value='{{ group.pk }}'> Join {% endif %}{{ group.name }} # {{ group.pk }}
 						</div>
 						
 					</div>

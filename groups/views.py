@@ -26,26 +26,24 @@ class SingleGroup(generic.DetailView):
 class ListGroups(LoginRequiredMixin, generic.ListView):
     model = Group
     template_name = 'groups/group_list.html'
-
-    # def def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["slug"] = Group.kwargs.get("slug")
-    #     return context
     
 
     def post(self, request, *args, **kwargs):
-        joinlist = request.POST.getlist('checks[]')
+        joinlist = request.POST.getlist('join[]')
+        leavelist = request.POST.getlist('leave[]')
         print("here is the list")
         print(joinlist)
+        print(leavelist)
         # group = Group.objects.filter(pk=self.args.get(7))
-
+        user=self.request.user
         # GroupMember.objects.create(user=self.request.user,group=group)
-        print(joinlist)
         for j in joinlist:
             # group = get_object_or_404(Group,name=self.kwargs.get(j))
-            group = Group.objects.filter(pk=self.kwargs.get(j))
-            print("test group")
-            GroupMember.objects.create(user=self.request.user,group=group)
+            # agencys = Agency.objects.filter(system_name__contains=searched)
+            group = Group.objects.get(pk=j)
+            print(user)
+            print(group.name)
+            GroupMember.objects.create(user=user,group=group)
         return super().get(request, *args, **kwargs)
       
 
